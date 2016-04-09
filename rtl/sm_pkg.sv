@@ -1,8 +1,8 @@
 package sm;
   
-  parameter SM_PTR_WIDTH = 8;
+  parameter SM_PTR_W = 8;
 
-  typedef logic [SM_PTR_WIDTH-1:0] sm_ptr_t;
+  typedef logic [SM_PTR_W-1:0] sm_ptr_t;
 
   typedef enum int unsigned {
     WR_OK,
@@ -10,15 +10,13 @@ package sm;
   } sm_res_code_t;
 
   typedef struct packed {
-    
     sm_res_code_t code;
     sm_ptr_t      ptr;
-
   } sm_res_t;
 
   typedef enum int unsigned {
-    RD,
-    CLEAR
+    READ,
+    FREE
   } sm_cmd_code_t;
   
   typedef struct packed {
